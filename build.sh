@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build -t testing-fairseq .
+docker build -t fairseq-on-docker .
