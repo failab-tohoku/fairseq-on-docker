@@ -38,10 +38,7 @@ cd /code/shell
 
 - `fairseq` and `shell` directories are bind mounted to the container.
   - This means that your edits on these directories will be automatically synced to the running image.
-  - This is really convenient if you are implementing your model, shell scripts, etc.
-- `/work00/<your_username>/fairseq_on_docker` is also bind mounted to the container
-  - If you save something in `/work` of the container, then it will be synced to the host.
-- If you want to bind another directory, edit `interactive.sh`
+  - This is really convenient when you are implementing your model, shell scripts, etc.
 
 ```
 <project_root>
@@ -53,6 +50,10 @@ cd /code/shell
 ├── interactive.sh 
 └── shell  # binded to /code/shell
 ```
+
+- `/work00/<your_username>/fairseq_on_docker` is also bind mounted to the container
+  - If you save something in `/work` of the container, then it will be synced to the host.
+- If you want to bind another directory, edit `interactive.sh`
 
 # Misc.
 
