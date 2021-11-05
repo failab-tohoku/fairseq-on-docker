@@ -2,7 +2,7 @@
 
 [Fairseq](https://github.com/pytorch/fairseq)をDocker上で動かすためのレポジトリ
 
-# How to Run
+# How to Train Transformer NMT Model on IWSLT 
 
 ```shell
 git clone git@github.com:failab-tohoku/fairseq-on-docker.git
