@@ -11,4 +11,5 @@ docker run -it \
 --mount type=bind,source="${WORKDIR}",target=/work \
 --mount type=bind,source="$(pwd)"/fairseq,target=/code/fairseq \
 --mount type=bind,source="$(pwd)"/shell,target=/code/shell \
-fairseq-on-docker /bin/bash
+--shm-size=2gb \
+fairseq-on-docker
