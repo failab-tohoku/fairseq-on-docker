@@ -5,7 +5,6 @@ SAVE_DIR="/work/fairseq_model/iwslt_2016"
 
 mkdir -p  ${SAVE_DIR}
 
-
 fairseq-train \
     ${DATASET} \
     --save-dir ${SAVE_DIR} \
@@ -17,4 +16,4 @@ fairseq-train \
     --no-epoch-checkpoints \
     --max-tokens 4096 \
     --ddp-backend no_c10d \
-    --log-interval 10  | tee ${SAVE_DIR}/log.txt
+    --log-interval 10 2>&1 | tee ${SAVE_DIR}/log.txt
