@@ -220,11 +220,10 @@ def do_setup(package_data):
             'numpy; python_version>="3.7"',
             "regex",
             "sacrebleu>=1.4.12",
-            # we do not need torch because it is already installed in the container
-            # "torch",
+            "torch",
             "tqdm",
             "bitarray",
-            # "torchaudio>=0.8.0",
+            "torchaudio>=0.8.0",
         ],
         dependency_links=dependency_links,
         packages=find_packages(
