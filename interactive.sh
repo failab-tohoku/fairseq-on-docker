@@ -18,4 +18,4 @@ docker run -it \
 --mount type=bind,source="$(pwd)"/fairseq,target=/code/fairseq \
 --mount type=bind,source="$(pwd)"/shell,target=/code/shell \
 --shm-size=2gb \
-fairseq-on-docker
+$PROJECT_NAME
