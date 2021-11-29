@@ -5,8 +5,14 @@ WORKDIR=/work00/$(id -un)/${PROJECT_NAME}
 
 mkdir -p "${WORKDIR}"
 
+if test -e /etc/dgx-release  ; then
+  GPU='"device=0,1,2,4"'
+else
+  GPU='all'
+fi
+
 docker run -it \
---gpus all \
+--gpus ${GPU} \
 --rm  \
 --mount type=bind,source="${WORKDIR}",target=/work \
 --mount type=bind,source="$(pwd)"/fairseq,target=/code/fairseq \
