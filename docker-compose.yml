@@ -20,5 +20,8 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              device_ids: ['0', '1', '2', '4']
+              # You must change these IDs depending on the server
+              # e.g., if you use DGX series: `0, 1, 2, 4` to avoid using crappy GPU
+              # e.g., otherwise: 0, 1, 2, 3
+              device_ids: ['0', '1', '2', '3']
               capabilities: [gpu]
