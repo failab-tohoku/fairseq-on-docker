@@ -12,6 +12,7 @@ services:
         source: "./shell"
         target: "/code/shell"
     tty: true
+    shm_size: '2gb'
     environment:
       HOST_USERNAME: ${HOST_USERNAME}
     deploy:
