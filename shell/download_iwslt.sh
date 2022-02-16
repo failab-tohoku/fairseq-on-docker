@@ -2,8 +2,10 @@
 #
 # Adapted from https://github.com/facebookresearch/MIXER/blob/master/prepareData.sh
 
-mkdir -p /work/dataset/iwslt
-cd /work/dataset/iwslt || exit
+DATA_DIR=/work00/${HOST_USERNAME}/fairseq-on-docker/dataset/iwslt
+
+mkdir -p ${DATA_DIR}
+cd ${DATA_DIR} || exit
 
 echo 'Cloning Moses github repository (for tokenization scripts)...'
 git clone https://github.com/moses-smt/mosesdecoder.git

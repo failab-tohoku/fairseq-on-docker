@@ -1,0 +1,23 @@
+services:
+  fairseq:
+    build: .
+    volumes:
+      - type: bind
+        source: "/work00"
+        target: "/work00"
+      - type: bind
+        source: "./fairseq"
+        target: "/code/fairseq"
+      - type: bind
+        source: "./shell"
+        target: "/code/shell"
+    tty: true
+    environment:
+      HOST_USERNAME: ${HOST_USERNAME}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['0', '1', '2', '4']
+              capabilities: [gpu]

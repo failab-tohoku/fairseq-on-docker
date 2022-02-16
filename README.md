@@ -8,12 +8,19 @@
 git clone git@github.com:failab-tohoku/fairseq-on-docker.git
 cd fairseq-on-docker
 
-# building container through `docker build`
-./build.sh        
+# write your username to .env file
+echo "HOST_USERNAME=$(id -un)" > .env
 
-# diving into the container through `docker run`
-./interactive.sh  
+# building container
+docker compose build
 
+# start container in background
+docker compose up -d
+
+# attach to running container
+# **コンテナの名前は適宜 docker ps で確認すること**
+docker exec -it fairseq_on_docker-fairseq-1 bash
+ 
 # 以降はコンテナ内部で実行される
 # プロンプトが
 # root@c187cecdbc1c:/code/fairseq#
@@ -23,15 +30,15 @@ cd /code/shell
 
 # Download IWSLT Dataset
 # A downloaded data will be saved to /work/dataset
-./download_iwslt.sh
+bash download_iwslt.sh
 
 # Preprocess IWSLT Dataset
 # Preprocessed data will be saved to /work/fairseq_data
-./preprocess_iwslt.sh
+bash preprocess_iwslt.sh
 
 # Train NMT Model on IWSLT Dataset
 # Model parameter will be saved to /work/fairseq_model
-./train_iwslt.sh
+bash train_iwslt.sh
 ```
 
 # Repository Overview

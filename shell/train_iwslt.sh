@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-DATASET="/work/fairseq_data/iwslt16.tokenized.de-en"
-SAVE_DIR="/work/fairseq_model/iwslt_2016"
+DATASET="/work00/${HOST_USERNAME}/fairseq-on-docker/fairseq_data/iwslt14.tokenized.de-en"
+SAVE_DIR="/work00/${HOST_USERNAME}/fairseq-on-docker/fairseq_model/iwslt_2014"
 
 mkdir -p  ${SAVE_DIR}
 
